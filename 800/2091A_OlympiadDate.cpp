@@ -1,15 +1,10 @@
 #include<iostream>
 using namespace std;
 
-int main() {
-  unordered_map<int, int> map = {0: 3, 1: 1, 2: 2, 3: 1, 5: 1};
-  int t;
-  cin >> t;
-  while(t-- > 0) {
-    int n;
-    cin >> a;
+// Idea: the full amount of variations is A(20; 8) that less than 10^6. So greed search can help
+// Second idea to use hash map
 
-  }
+int main() {
 
   return 0;
 }
