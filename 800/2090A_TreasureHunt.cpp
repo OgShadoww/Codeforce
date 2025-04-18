@@ -6,32 +6,32 @@ int main() {
   cin >> t;
 
   while(t-- > 0) {
-    int x, y, a;
+    long long x, y, a;
     int k = 1;
+    long long depth;
     cin >> x >> y >> a;
     a += 1;
     
-    while(a >= 0) {
+    
+    while(true) {
       if(k % 2 == 0) {
-        if(a - y > 0) {
-          a -= y;
-        }
-        else {
-          cout << "YES" << endl;
-          break;
-        }
-        k++;
+        depth += x;
       }
       if(k % 2 != 0) {
-        if(a - x > 0) {
-          a -= x;
-        }
-        else {
+        depth += y;
+      }
+
+      if(depth > a) {
+        if(k % 2 == 0) {
           cout << "NO" << endl;
           break;
         }
-        k++;
+        else {
+          cout << "YES" << endl;
+        }
       }
+
+      k++;
     }
   }
     
