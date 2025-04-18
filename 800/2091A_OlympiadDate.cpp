@@ -1,4 +1,5 @@
 #include<iostream>
+#include <unordered_map>
 #include<vector>
 using namespace std;
 
@@ -7,6 +8,8 @@ using namespace std;
 
 int main() {
   vector<int> target  {0, 1, 0, 3, 2, 0, 2, 5};
+  unordered_map<int, int> map;
+  for(int d: target) map[d]++;
   int t;
   cin >> t;
 
@@ -14,25 +17,26 @@ int main() {
     int n;
     cin >> n;
     vector<int> digits(n);
-    int k = 0;
     for(int i = 0; i < n; i++) {
       cin >> digits[i];
     }
+
+    unordered_map<int, int> freq = map;
+    int answer = 0;
+    int remaining = target.size();
+
     for(int i = 0; i < n; i++) {
-      for(int j = 0; j < 8; j++) {
-        if(digits[i] == target[j]) {
-          k++;
-          if(k == 8) {
-            cout << i; 
-            break;
-          }
-        }
+      if(freq[digits[i] > 0]) {
+        freq[digits[i]]--;
+        remaining--;
       }
-      if(k != 8) {
-        cout << 0;
+      if(remaining == 0) {
+        answer = i + 1;
         break;
       }
     }
+
+    cout << answer << endl;
   }
 
   return 0;
