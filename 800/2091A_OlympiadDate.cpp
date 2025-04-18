@@ -26,10 +26,10 @@ int main() {
     int remaining = target.size();
 
     for(int i = 0; i < n; i++) {
-      if(freq[digits[i] > 0]) {
+      if (freq[digits[i]] > 0) {
         freq[digits[i]]--;
         remaining--;
-      }
+      }      
       if(remaining == 0) {
         answer = i + 1;
         break;
