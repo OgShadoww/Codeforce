@@ -7,8 +7,8 @@ int main() {
 
   while(t-- > 0) {
     long long x, y, a;
-    int k = 1;
-    long long depth;
+    int k = 0;
+    long long depth = 0;
     cin >> x >> y >> a;
     a += 1;
     
@@ -28,6 +28,7 @@ int main() {
         }
         else {
           cout << "YES" << endl;
+          break;
         }
       }
 
