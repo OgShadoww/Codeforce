@@ -2,6 +2,12 @@
 #include <unordered_map>
 using namespace std;
 
+// First Idea: To find all variation we can use just C(min(unln, ln); 
+// Second idea: min(unln, ln) don't work correct, so better to use C(ln; 2)*A(unln;1). Exapmole: C(2;1)*C(4;2) = 2! * 4! / (2! * 2!) = 2 * 4 * 3 / (2 * 2) = 2 * 3 = 6;
+// Checking in example: 9, "--__-_---" = C(3;1)*C(6;2) = 3 * 6! / 2! * 4! = 3 * 6 * 5 / 2 = 30 uncorrect
+// Last check 7, "_------" + C(1;1)*C(6;2) = 1 * 6*5 / 2 = 15 uncorrect
+
+
 int main() {
   int t;
   cin >> t;
